@@ -39,6 +39,7 @@ import (
 )
 
 func main() {
+	server()
 	// creates the in-cluster config
 	config, err := rest.InClusterConfig()
 	if err != nil {
@@ -74,7 +75,6 @@ func main() {
 
 		time.Sleep(10 * time.Second)
 	}
-	server()
 }
 
 func server() {
