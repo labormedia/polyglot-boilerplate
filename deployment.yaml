@@ -1,0 +1,35 @@
+# This file configures the hello-world app which serves public web traffic.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+  namespace: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello-app-go
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: localhost:5000/helloworld-go:latest
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
+      - name: hello-app-py
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: localhost:5000/helloworld-py:latest
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 6000
+        env:
+          - name: PORT
+            value: "6000"
