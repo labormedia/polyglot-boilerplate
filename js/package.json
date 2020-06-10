@@ -1,0 +1,17 @@
+{
+  "name": "client-api.js",
+  "version": "0.0.1",
+  "description": "Kubernetes in cluster api connector",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kubernetes"
+  ],
+  "author": "Diego Correa T. <algoritmia@labormedia.cl>",
+  "license": "ISC",
+  "dependencies": {
+    "@kubernetes/client-node": "^0.12.0"
+  }
+}
